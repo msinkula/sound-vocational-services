@@ -39,7 +39,7 @@
 
 </head>
 
-<body class="<?php if (is_page('Home')) { echo 'home'; } elseif (is_page()) { echo 'pages'; } elseif ( is_home() || is_single() || is_archive()) { echo 'postings';} ?> page-<?php the_ID(); ?>">
+<body <?php body_class(); ?>>
 
 
 <!-- Begin Header -->
@@ -71,7 +71,7 @@
 <!-- Begin Main Menu -->
 <div id="menu-main">
 <nav id="menu-main-elements">
-<h4 id="menu-main-title"><a href="#">Menu<span class="icon"><img src="<?php bloginfo('template_directory'); ?>/images/img-mobile.png" /></span></a></h4>
+<h4 id="menu-main-title"><a href="#"><span id="menu-main-title-glyph">&#8801;&nbsp;</span>Menu</a></h4>
 <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 </nav>
 </div>
@@ -81,8 +81,10 @@
 	
 <!-- Begin Home Page Spotlight -->
 <div id="spotlight" class="page-<?php the_ID(); ?>">
-<p id="spotlight-tagline"><?php $key="spotlight-tagline"; echo get_post_meta($post->ID, $key, true); ?></p>
-<?php if ( is_page('Home') ) { ?><a id="spotlight-button" href="our-services">Learn More</a><?php } ?>
+    <div id="spotlight-elements" class="page-<?php the_ID(); ?>">
+    <p id="spotlight-tagline" class="page-<?php the_ID(); ?>"><?php $key="spotlight-tagline"; echo get_post_meta($post->ID, $key, true); ?></p>
+    <?php if ( is_page('Home') ) { ?><a id="spotlight-button" class="page-<?php the_ID(); ?>" href="our-services">Learn More</a><?php } else { ?><a id="spotlight-button" class="page-<?php the_ID(); ?>" href="/send-a-referral/">Send a Referral</a><?php } ?>
+    </div>
 </div>
 <!-- End Home Page Spotlight -->
     

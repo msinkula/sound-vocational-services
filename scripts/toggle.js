@@ -10,11 +10,11 @@ window.onload = function() {
 	
 	jQuery(window).resize(function(){
 
-		if (jQuery(window).width() > 980) {
+		if (jQuery(window).width() > 981) {
 			jQuery(".menu-main-menu-container").css('display', 'block');
 		}
 		
-		if (jQuery(window).width() < 980) {
+		if (jQuery(window).width() < 981) {
 			jQuery(".menu-main-menu-container").css('display', 'none');
 		}
 		

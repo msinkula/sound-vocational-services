@@ -1,5 +1,5 @@
 <!-- Begin Sidebar -->
-<div id="sidebar" class="page-<?php the_ID(); ?>">
+<div id="sidebar">
 
 	<!-- Begin Sub Pages -->
 	<?php  
@@ -11,11 +11,13 @@
 		$parent_title = get_the_title($post->post_parent);
 	
 		if ($children) { // if has children ?>
-		
+			
+            <div id="sidebar-sub-menu" class="widget-items">
 			<h2 class="sub-menu-title"><a href="<?php echo $parent_link; ?>"><?php  echo $parent_title; ?></a>:</h2>
 			<ul class="sub-menu">
 			<?php echo $children; ?>
 			</ul>
+            </div>
 			
 		<?php } // end if has children
 	

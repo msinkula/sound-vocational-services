@@ -12,6 +12,7 @@
 <?php endwhile; ?>
 <?php endif; ?>
 
+<?php if(!(is_page('Contact Us'))) { ?>
 <!-- Begin Page Excerpt -->
 <?php $page_excerpts = array('post_type' => 'page','numberposts' => -1,'post_status' => null,'post_parent' => $post->ID,'order' => ASC,'orderby' => 'menu_order'); $child_pages = get_posts($page_excerpts); ?>
 <?php foreach ($child_pages as $post) : setup_postdata($post); ?>
@@ -22,6 +23,7 @@
     </article>
 <?php endforeach; ?> 
 <!-- End Page Excerpt -->
+<?php } ?>
 
 <?php /*get_subpages();*/ ?>
 

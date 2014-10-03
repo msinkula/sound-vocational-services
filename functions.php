@@ -4,14 +4,15 @@
 add_editor_style( 'admin.css' );
 
 // Register Sidebar
-register_sidebars(array(
-	'name' => 'sidebar',
-	'description' => 'Widgets in this area will be shown in the side bar.',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+register_sidebars(1, array(
+	'before_widget' => '<div id="%1$s" class="widget-items %2$s">',
 	'after_widget'  => '</div>',
-	'before_title'  => '<h2 class="widgettitle">',
+	'before_title'  => '<h2 class="widget-title">',
 	'after_title'   => '</h2>'
 	));
+	
+	
+	
 
 // Register Menus
 function register_my_menus() {
