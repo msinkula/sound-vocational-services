@@ -1,11 +1,11 @@
 div.staff-member-listing {
-	border-top: 1px solid #000;
+	border-top: 1px solid #DDD;
 	overflow: hidden;
 }
 
 	div.staff-member-listing a {
 		color: #666;
-		border-bottom: 1px solid #666;
+		border-bottom: 1px solid #DDD;
 		margin-bottom: 10px;
 		}
 				
@@ -15,7 +15,7 @@ div.staff-member-listing {
 		}
 
 div.staff-member {
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #DDD;
 	padding: 10px 0;
 }
 
@@ -24,7 +24,7 @@ div.staff-member {
 	float: right;
 	margin-top: 4px;
 	margin-left: 20px;
-	border: 1px solid #000;
+	border: 1px solid #DDD;
 	}
 	
 p.staff-member-position {

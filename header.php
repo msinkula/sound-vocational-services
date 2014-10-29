@@ -48,18 +48,18 @@
 
 	<!-- Begin Logo -->
     <div id="logo">
-    <a href="<?php echo get_settings('home'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/img-logo.png" alt="<?php bloginfo('name'); ?>" /><span id="logo-text"><?php bloginfo('name'); ?></span></a>
+    <a href="<?php echo get_option('home'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/img-logo.png" alt="<?php bloginfo('name'); ?>" /><span id="logo-text"><?php bloginfo('name'); ?></span></a>
   </div>
 	<!-- End Logo -->
     
     <!-- Begin Tchotchkes -->
     <div id="tchotchkes">
     
-        <!-- Begin Language Selector -->
+    	<?php if (is_user_logged_in()) { ?>
         <div id="language-selector">
         <?php do_action('icl_language_selector'); ?>
         </div>
-        <!-- End Language Selector -->
+        <?php } ?>
     
     </div>
     <!-- End Tchotchkes -->
@@ -77,18 +77,18 @@
 </div>
 <!-- End Main Menu -->
 
-<?php if (!( is_page() && $post->post_parent )) { // begin if page does not have a parent ?>
+<?php if (get_post_meta($post->ID, 'spotlight-tagline', true)) { // begin check for spotlight ?>
 	
-<!-- Begin Home Page Spotlight -->
+<!-- Begin Spotlight -->
 <div id="spotlight" class="page-<?php the_ID(); ?>">
     <div id="spotlight-elements" class="page-<?php the_ID(); ?>">
-    <p id="spotlight-tagline" class="page-<?php the_ID(); ?>"><?php $key="spotlight-tagline"; echo get_post_meta($post->ID, $key, true); ?></p>
+    <p id="spotlight-tagline" class="page-<?php the_ID(); ?>"><?php echo get_post_meta($post->ID, 'spotlight-tagline', true); ?></p>
     <?php if ( is_page('Home') ) { ?><a id="spotlight-button" class="page-<?php the_ID(); ?>" href="our-services">Learn More</a><?php } else { ?><a id="spotlight-button" class="page-<?php the_ID(); ?>" href="/send-a-referral/">Send a Referral</a><?php } ?>
     </div>
 </div>
-<!-- End Home Page Spotlight -->
+<!-- End Spotlight -->
     
-<?php }  // end if page does not have a parent ?>
+<?php }  // end check for spotlight ?>
 
 <!-- Begin Middle -->
 <div id="middle">
