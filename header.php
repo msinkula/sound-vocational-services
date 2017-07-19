@@ -76,19 +76,31 @@
 </nav>
 </div>
 <!-- End Main Menu -->
-
-<?php if (get_post_meta($post->ID, 'spotlight-tagline', true)) { // begin check for spotlight ?>
 	
-<!-- Begin Spotlight -->
-<div id="spotlight" class="page-<?php the_ID(); ?>">
-    <div id="spotlight-elements" class="page-<?php the_ID(); ?>">
-    <p id="spotlight-tagline" class="page-<?php the_ID(); ?>"><?php echo get_post_meta($post->ID, 'spotlight-tagline', true); ?></p>
-    <?php if ( is_page('Home') ) { ?><a id="spotlight-button" class="page-<?php the_ID(); ?>" href="our-services">Learn More</a><?php } else { ?><a id="spotlight-button" class="page-<?php the_ID(); ?>" href="/send-a-referral/">Send a Referral</a><?php } ?>
-    </div>
-</div>
-<!-- End Spotlight -->
-    
+	
+	
+<?php if (get_post_meta($post->ID, 'spotlight-tagline', true)) { // begin check for spotlight
+	
+	if ( is_page('Home') ) {?>
+		<!-- Begin Spotlight -->
+		<div id="spotlight" class="page-<?php the_ID(); ?>">
+			<img id="spotlight-main-image" src="<?php echo get_post_meta($post->ID, 'banner', true); ?>" alt="Main Spotlight Image" width="1600" height="490"/>
+			<div id="spotlight-elements" class="page-<?php the_ID(); ?>">
+    			<p id="spotlight-tagline" class="page-<?php the_ID(); ?>"><?php echo get_post_meta($post->ID, 'spotlight-tagline', true); ?></p>
+    			<a id="spotlight-button" class="page-<?php the_ID(); ?>" href="our-services">Learn More</a>
+    	</div>
+		<?php }  // end check for spotlight
+	else {?>
+		<!-- Begin Spotlight -->
+		<div id="spotlight" class="page-<?php the_ID(); ?>">
+    		<div id="spotlight-elements" class="page-<?php the_ID(); ?>">
+    			<p id="spotlight-tagline" class="page-<?php the_ID(); ?>"><?php echo get_post_meta($post->ID, 'spotlight-tagline', true); ?></p>
+    			<a id="spotlight-button" class="page-<?php the_ID(); ?>" href="/send-a-referral/">Send a Referral</a>
+    		</div>
+			</div>
+		<?php }  // end check for spotlight ?>
 <?php }  // end check for spotlight ?>
+
 
 <!-- Begin Middle -->
 <div id="middle">

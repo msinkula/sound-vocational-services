@@ -220,10 +220,10 @@ h1, h2, h3, h4, label	 {
 
 /* SPOTLIGHT */	
 
-#spotlight {
+/*#spotlight {
 	background-color: #000;
 	background-size: cover;
-	}
+	}*/
 	
 #spotlight-elements {
 	position: relative;
@@ -251,10 +251,11 @@ h1, h2, h3, h4, label	 {
 	position: absolute;
 	}
 
-#spotlight.page-15 { /* Home */
-	background-image: url(images/bg-home-1600.png); 
-	background-position: top 0px center;
-	background-repeat: no-repeat;
+#spotlight-main-image{ /* Home */
+	position: absolute;
+    min-height: 490px;
+    object-fit: cover;
+    overflow: hidden;
 	}
 
 #spotlight-elements.page-15 { /* Home */
@@ -953,13 +954,17 @@ h1, h2, h3, h4, label	 {
 		}
 	
 	#spotlight.page-13 { /* Contact */
-		background-size: cover;
+		object-fit: cover;
 		}
 
 }
 
 /* Desktop Screen Set to 1440 x 900 or Below */
 @media screen and (max-width: 1440px) {
+	
+	#spotlight-main-image{ 
+    	min-height: 450px;
+		}
 	
 	#spotlight-elements.page-15 { /* Home */
 			min-height: 425px;
@@ -979,8 +984,12 @@ h1, h2, h3, h4, label	 {
 /* Desktop Screen Set to 1280 x 800 or Below */
 @media screen and (max-width: 1280px) {
 	
+	#spotlight-main-image{ 
+    	min-height: 350px;
+		}
+	
 	#spotlight-elements.page-15 { /* Home */
-			min-height: 375px;
+			min-height: 325px;
 			}
 	
 }
@@ -1004,7 +1013,7 @@ h1, h2, h3, h4, label	 {
 		right: 0px;
 		top: 75px;
 		}
-		
+	
 	#spotlight-elements.page-15 { /* Home */
 		min-height: 300px;
 		}
@@ -1047,13 +1056,14 @@ h1, h2, h3, h4, label	 {
     	padding: 10px;
 	}
 	
-	#spotlight.page-15 { /* Home */
+/*	#spotlight.page-15 { /* Home 
 		background-image: url(images/bg-home-980.png);
 		background-size: cover;
 	}
+*/
 	
 	#spotlight-elements.page-15 { /* Home */
-		min-height: 400px;
+		min-height: 325px;
 		}
 	
 	#spotlight.page-7, #spotlight.page-5, #spotlight.page-9 { /* Services */
@@ -1215,6 +1225,10 @@ h1, h2, h3, h4, label	 {
 	
 	body.page-15 { /* Home */
 		background-position: top -0px left -0px;
+		}
+	
+	#spotlight-main-image{ 
+    	min-height: 250px;
 		}
 		
 	#spotlight-elements.page-15 { /* Home */
